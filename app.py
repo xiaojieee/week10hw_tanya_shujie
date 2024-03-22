@@ -24,18 +24,6 @@ def home_page():
     """
 
 
-@app.route('/dynamic/<word>')
-def home(word):
-    return word
-
-
-@app.route('/square/<int:number>')
-def square(number):
-    squared = number ** 2
-    line = f"Your number squared is {squared}"
-    return line
-
-
 @app.route('/hello/<name>')
 def hello(name):
     greet = f"How's it going {name}?"
