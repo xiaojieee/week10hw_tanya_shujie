@@ -1,18 +1,7 @@
-from flask import Flask, url_for, request
+from flask import Flask, url_for
 
 app = Flask(__name__)
 # instantiating a flask object
-
-# dictionary to join the paths and page names
-pages = {
-    'Home': '/',
-    'About': '/about/',
-    'Lisa Simpson': '/lisa/',
-    'Bart Simpson': '/bart/',
-    'Homer Simpson': '/homer/',
-    'Marge Simpson': '/marge/',
-    'Maggie Simpson': '/maggie/'
-}
 
 
 # make the function http callable using a decorator
@@ -297,6 +286,18 @@ def maggie():
         </body>
     </html>
     """
+
+
+# dictionary to join the paths and page names
+pages = {
+    'Home': '/',
+    'About': '/about/',
+    'Lisa Simpson': '/lisa/',
+    'Bart Simpson': '/bart/',
+    'Homer Simpson': '/homer/',
+    'Marge Simpson': '/marge/',
+    'Maggie Simpson': '/maggie/'
+}
 
 
 @app.route('/<path:invalid_page>')
