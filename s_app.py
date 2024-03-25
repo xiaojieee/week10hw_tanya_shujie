@@ -322,6 +322,7 @@ def page_not_found(invalid_page):
     <ul>
         {"".join(f'<li><a href="{url}">{name}</a></li>' for name, url in pages.items())}
     </ul>
+    <hr>
     """
 
 
