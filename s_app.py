@@ -10,7 +10,8 @@ pages = {
     'Lisa Simpson': '/lisa/',
     'Bart Simpson': '/bart/',
     'Homer Simpson': '/homer/',
-    'Marge Simpson': '/marge/'
+    'Marge Simpson': '/marge/',
+    'Maggie Simpson': '/maggie/'
 }
 
 
@@ -24,6 +25,7 @@ def homepage():
     bart_url = url_for('bart')
     homer_url = url_for('homer')
     marge_url = url_for('marge')
+    maggie_url = url_for('maggie')
     return f"""
         <!DOCTYPE html>
         <html>
@@ -51,6 +53,7 @@ def homepage():
                     <li><a href="{bart_url}">Bart Simpson</a></li>
                     <li><a href="{homer_url}">Homer Simpson</a></li>
                     <li><a href="{marge_url}">Marge Simpson</a></li>
+                    <li><a href="{maggie_url}">Maggie Simpson</a></li>
                 </ul>
                 <hr>
                 <a href="{about_url}">About Page</a>
@@ -103,6 +106,7 @@ def lisa():
     bart_url = url_for('bart')
     homer_url = url_for('homer')
     marge_url = url_for('marge')
+    maggie_url = url_for('maggie')
     return f"""
     <!DOCTYPE html>
     <html>
@@ -127,7 +131,7 @@ def lisa():
             and <a href="{marge_url}">Marge</a>
             born May 4th 1984 , the younger sister of 
             <a href="{bart_url}">Bart</a>, 
-            and the older sister of Maggie, at age 8.</p>
+            and the older sister of <a href="{maggie_url}">Maggie</a>, at age 8.</p>
             <hr>
             <a href="{home_url}">Home Page</a>
             <a href="{about_url}">About the Archive</a>
@@ -143,6 +147,7 @@ def bart():
     lisa_url = url_for('lisa')
     homer_url = url_for('homer')
     marge_url = url_for('marge')
+    maggie_url = url_for('maggie')
     return f"""
     <!DOCTYPE html>
     <html>
@@ -166,7 +171,8 @@ def bart():
             and <a href="{marge_url}">Marge</a>, 
             and the brother of 
             <a href="{lisa_url}">Lisa</a> and 
-            Maggie. Bart's most prominent and popular character traits are his mischievousness, rebelliousness and 
+            <a href="{maggie_url}">Maggie</a>. 
+            Bart's most prominent and popular character traits are his mischievousness, rebelliousness and 
             disrespect for authority. </p>
             <hr>
             <a href="{home_url}">Home Page</a>
@@ -183,6 +189,7 @@ def homer():
     lisa_url = url_for('lisa')
     bart_url = url_for('bart')
     marge_url = url_for('marge')
+    maggie_url = url_for('maggie')
     return f"""
     <!DOCTYPE html>
     <html>
@@ -204,7 +211,7 @@ def homer():
             <p>Homer is the nominal foreman of the paternally eponymous family. He and his wife 
             <a href="{marge_url}">Marge</a> have 
             three children: <a href="{bart_url}">Bart</a>, 
-            <a href="{lisa_url}">Lisa</a> and Maggie.</p>
+            <a href="{lisa_url}">Lisa</a> and <a href="{maggie_url}">Maggie</a>.</p>
             <hr>
             <a href="{home_url}">Home Page</a>
             <a href="{about_url}">About the Archive</a>
@@ -220,6 +227,7 @@ def marge():
     lisa_url = url_for('lisa')
     bart_url = url_for('bart')
     homer_url = url_for('homer')
+    maggie_url = url_for('maggie')
     return f"""
     <!DOCTYPE html>
     <html>
@@ -243,7 +251,46 @@ def marge():
             she has three children: 
             <a href="{bart_url}">Bart</a>, 
             <a href="{lisa_url}">Lisa</a>, 
-            and Maggie.
+            and <a href="{maggie_url}">Maggie</a>.
+            <hr>
+            <a href="{home_url}">Home Page</a>
+            <a href="{about_url}">About the Archive</a>
+        </body>
+    </html>
+    """
+
+
+@app.route('/maggie/')
+def maggie():
+    home_url = url_for('homepage')
+    about_url = url_for('about_page')
+    lisa_url = url_for('lisa')
+    bart_url = url_for('bart')
+    homer_url = url_for('homer')
+    marge_url = url_for('marge')
+    return f"""
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>About Maggie</title>
+            <style>
+                body {{
+                    text-align: center;
+                }}
+                .content-container {{
+                    width: 80%;
+                    margin: 0 auto;
+                    text-align: left;
+                }}
+            </style>
+        </head>
+        <body>
+            <h1>Margaret "Maggie" Simpson</h1>
+            <p>Maggie is the youngest child of <a href="{homer_url}">Homer</a>
+             and <a href="{marge_url}">Marge</a>, 
+             and the younger sister to <a href="{bart_url}">Bart</a>
+             and <a href="{lisa_url}">Lisa</a>. 
+             She is often seen sucking on her orange pacifier and, when she walks, she trips over her clothing and falls on her face.
             <hr>
             <a href="{home_url}">Home Page</a>
             <a href="{about_url}">About the Archive</a>
