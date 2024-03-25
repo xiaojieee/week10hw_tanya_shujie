@@ -3,6 +3,7 @@ from flask import Flask, url_for
 # class must be instantiated as an object
 app = Flask(__name__)
 
+
 # bind a URL to python code using @ decorator
 @app.route('/')
 @app.route('/home/')
